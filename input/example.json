@@ -1,0 +1,53 @@
+{
+  "type_of_race": str  ,
+  "pilots": [
+    {
+      "stamina": float
+    },
+    {
+       "stamina": float
+    },
+    {
+      "stamina": float
+    }
+  ],
+  "track_infos": {
+    "name": str,
+    "lap_time": float,
+    "tyre_num_lap": {
+      "dry": [
+        ENUM
+        {
+          "type": str,
+          "max": int,
+          "min": int
+        },
+        {
+          "type": str,
+          "max": int,
+          "min": int
+        },
+        {
+          "type": str,
+          "max": int,
+          "min": int
+        }
+      ],
+       "wet": [
+        ENUM
+        {
+          "type": str,
+          "max": int,
+          "min": int
+        },
+        {
+          "type": str,
+          "max": int,
+          "min": int
+        }]
+    }
+  },
+  "car_info": {
+    "fuel_capacity": int
+  }
+}
