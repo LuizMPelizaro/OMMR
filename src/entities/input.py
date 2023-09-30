@@ -1,20 +1,23 @@
-import json
 from pilot import Pilots
+from src.math.math_functions import *
 from track_Info import TrackInfo
 from car_info import CarInfo
 from type_of_race import TypeOfRace
 from src.utils.utils import get_json
 from tyres import Tyre
+from risk import ErrorRisk
 
 
 class Input:
     def __init__(self,
                  type_of_race: TypeOfRace,
+                 risk: ErrorRisk,
                  list_of_pilot: Pilots,
                  track_infos: TrackInfo = None,
                  tyre: Tyre = None,
                  car_info: CarInfo = None):
         self.__type_of_race = type_of_race
+        self.__risk = risk
         self.__pilots = list_of_pilot
         self.__track_infos = track_infos
         self.__tyre = tyre
@@ -23,6 +26,10 @@ class Input:
     @property
     def type_of_race(self):
         return self.__type_of_race
+
+    @property
+    def risk(self):
+        return self.__risk
 
     @property
     def pilots(self):
@@ -44,16 +51,11 @@ class Input:
 if __name__ == '__main__':
     data = get_json('test')
     type_of_race = TypeOfRace(data)
+    error = ErrorRisk(data)
     pilots = Pilots(data)
     track_info = TrackInfo(data)
     dry_tyres = Tyre(data, 0)
     car_info = CarInfo(data)
-    Race = Input(type_of_race, pilots, track_info, dry_tyres, car_info)
-    print(Race.type_of_race.type_of_race)
-    print(Race.pilots.pilot_1)
-    print(Race.pilots.pilot_2)
-    print(Race.pilots.pilot_3)
-    print(Race.track_infos.name)
-    print(Race.track_infos.lap_time)
-    print(Race.tyres.type_tyre)
-    print(Race.car_info.fuel_capacity)
+    Race = Input(type_of_race,error, pilots, track_info, dry_tyres, car_info)
+    print(pilot_time(Race.risk.risk_of_pilot, Race.pilots.pilot_1))
+
