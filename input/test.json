@@ -1,0 +1,55 @@
+{
+  "type_of_race": "endurance",
+  "risk_of_pilot": "high",
+  "pilots": [
+    {
+      "stamina": 90.0
+    },
+    {
+      "stamina": 50.0
+    },
+    {
+      "stamina": 75.0
+    }
+  ],
+  "track_infos": {
+    "name": "Spa",
+    "lap_time": 125.0,
+    "race_time": 360
+  },
+  "tyres": [
+    {
+      "type": "soft",
+      "condition": "dry",
+      "max": 20,
+      "min": 17
+    },
+    {
+      "type": "super soft",
+      "condition": "dry",
+      "max": 15,
+      "min": 12
+    },
+    {
+      "type": "medium",
+      "condition": "dry",
+      "max": 25,
+      "min": 27
+    },
+    {
+      "type": "intermediate",
+      "condition": "wet",
+      "max": 14,
+      "min": 16
+    },
+    {
+      "type": "wet",
+      "condition": "wet",
+      "max": 15,
+      "min": 17
+    }
+  ],
+  "car_info": {
+    "fuel_capacity": 58.0
+  }
+}
